@@ -1,0 +1,40 @@
+TheMadCatter, Unbelievaboat game macro/script.
+
+Export to DESKTOP to use
+
+IMPORTANT: In using these, if anything messes up or glitches and damages your computer in any way, I am NOT responsible for any damages caused.
+
+
+The kill key to stop everything is ESCAPE, however, if the script is paused/toggled, you have to untoggle it to stop the program. You can change VARIABLES however you like, just right click and hit EDIT SCRIPT.
+
+` will pause/toggle the program so you can keep the script running and still use your numpad
+
+Run either, Blackjack, Chicken, or Roulette.
+
+To switch between gaming profiles.
+
+Numpad 1 = Blackjack
+Numpad 2 = Chicken
+Numpad 3 = Roulette
+
+DEFUALT KEYBINDING BELOW
+
+Transfered Keybindings Below //Will always be the same on whatever script you run
+
+Numpad 5 = !bal //Will automatically enter
+` = Suspend/Toggle
+Escape = Kill key
+
+Blackjack
+Numpad 7 = !blackjack
+Numpad 8 = hit //Will automatically enter
+Numpad 9 = stand //Will automatically enter
+
+Chicken
+Numpad 7 = !buy-item chicken //Will automatically enter
+Numpad 8 = !cock-fight 1000 //Will automatically enter
+
+Roulette
+Numpad 7 = !roulette 1000 black //Will automatically enter
+Numpad 9 = !roulette 1000 red //Will automatically enter
+Numpad 8 = !roulette //Will NOT automatically enter, you can change the amount and color on this one
