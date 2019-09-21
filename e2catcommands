@@ -1,0 +1,459 @@
+##I would like to say I did not make all of this. I have pulled things from other people, or modified them to get the results I wanted. I am in no way taking credit for other peoples work.#
+##Thank you 123 for helping me with everything
+@name Cat Commands
+@inputs Add Remove User:entity
+@outputs Time X Y Temp Step Door
+@persist I E Player:entity Playert:entity Clip SteamID:string O:entity PrivateMode DSGroup:string DSName:string Vector:vector Timer P:array Distance:array Target:entity D Z TP:entity Time K
+@trigger
+interval(1)
+runOnChat(1)
+runOnKeys(owner(),1)
+runOnTick(1)
+
+
+XX=cos(Time/3)*30
+YX=sin(Time/3)*30
+
+if (first() || duped()) { 
+    print(4,"Now Loading Cat Commands")
+    Step = 1
+    
+    
+print("~~You're now using Cat Commands~~")
+print("~~Use .help for a list of commands~~")
+    O = owner()
+    DSGroup = "Cat's Channel"
+    DSName = O:name()
+    PrivateMode = 0
+    dsJoinGroup(DSGroup)
+    dsSetScope(2)
+}
+runOnSignal(DSGroup, 2, 1)
+if (chatClk(O)) {
+    LastSaidString = O:lastSaid()
+    Message = LastSaidString:explode(" ")
+    if (Message[1, string]:lower() == ".pmsg") {
+        hideChat(1)
+        if (!PrivateMode) {
+        print("Now in private chat")
+            PrivateMode = 1
+        } else {
+        print("Now in public chat")
+            PrivateMode = 0
+        }
+    }
+    if (PrivateMode) {
+        hideChat(1)
+        signalSetGroup(DSGroup)
+        dsSend(DSName, DSGroup, 2, LastSaidString)
+        printColor(vec(242,7,231), "[Private] ", vec(50),"[", teamColor(O:team()), O:name(), vec(50), "]", vec(255),": " + LastSaidString)
+    }
+}
+
+if (dsClk()) {
+    MessageSender = dsGetSender():owner()
+    printColor(vec(242,7,231),"[Private] ", vec(50),"[", teamColor(MessageSender:team()), MessageSender:name(), vec(50), "]", vec(255),": " + dsGetString()) 
+}
+
+
+holoCreate(0)
+holoModel(0, "sphere3")
+holoScale(0,vec(0.5,0.5,0.5))
+holoMaterial(0,"models/props_combine/com_shield001a")
+
+holoCreate(1)
+holoModel(1,"sphere3")
+holoScale(1,vec(0.1,0.1,0.1))
+holoMaterial(1,"models/props_combine/com_shield001a")
+
+holoCreate(2)
+holoModel(2,"sphere3")
+holoScale(2,vec(0.06,0.06,0.06))
+holoMaterial(2,"models/props_combine/com_shield001a")
+
+holoCreate(3)
+holoModel(3,"sphere3")
+holoScale(3,vec(0.3,0.3,0.3))
+holoMaterial(3,"models/props_combine/com_shield001a")
+
+holoCreate(4)
+holoModel(4,"sphere3")
+holoScale(4,vec(0.2,0.2,0.2))
+holoMaterial(4,"models/props_combine/com_shield001a")
+holoCreate(7)
+holoModel(7,"torus3")
+holoScale(7,vec(0.3,0.3,0))
+holoMaterial(7,"models/props_combine/com_shield001a")
+
+holoCreate(5)
+holoModel(5,"sphere3")
+holoScale(5,vec(0.09,0.09,0.09))
+holoMaterial(5,"models/props_combine/com_shield001a")
+
+holoCreate(6)
+holoModel(6,"sphere3")
+holoScale(6,vec(0.0001,0.0001,0.0001))
+holoMaterial(6,"models/props_combine/com_shield001a")   
+
+holoCreate(10)
+holoModel(10, "sphere3")
+holoScale(10,vec(0.5,0.5,0.5))
+holoMaterial(10,"models/props_combine/com_shield001a")
+
+holoCreate(11)
+holoModel(11,"sphere3")
+holoScale(11,vec(0.1,0.1,0.1))
+holoMaterial(11,"models/props_combine/com_shield001a")
+
+holoCreate(12)
+holoModel(12,"sphere3")
+holoScale(12,vec(0.06,0.06,0.06))
+holoMaterial(12,"models/props_combine/com_shield001a")
+
+holoCreate(13)
+holoModel(13,"sphere3")
+holoScale(13,vec(0.3,0.3,0.3))
+holoMaterial(13,"models/props_combine/com_shield001a")
+
+holoCreate(14)
+holoModel(14,"sphere3")
+holoScale(14,vec(0.2,0.2,0.2))
+holoMaterial(14,"models/props_combine/com_shield001a")
+holoCreate(17)
+holoModel(17,"torus3")
+holoScale(17,vec(0.3,0.3,0))
+holoMaterial(17,"models/props_combine/com_shield001a")
+
+holoCreate(15)
+holoModel(15,"sphere3")
+holoScale(15,vec(0.09,0.09,0.09))
+holoMaterial(15,"models/props_combine/com_shield001a")
+
+holoCreate(16)
+holoModel(16,"sphere3")
+holoScale(16,vec(0.0001,0.0001,0.0001))
+holoMaterial(16,"models/props_combine/com_shield001a")   
+if(chatClk(owner())){
+    LS = lastSaid():explode(" ")[1, string]
+    LSS = lastSaid():explode(" ")[2, string]
+}
+    if(LS == ".give"){
+        hideChat(1)
+         TempPlayer = findPlayerByName(LSS)
+         Player = TempPlayer
+        print("Giving planets to "+LSS)
+        
+        interval(10)
+        Eye = owner():eye()
+        Chip=entity()
+        Timer=Timer+1*1
+        T=Timer
+
+ }
+Vector=owner():pos()-(entity():pos()-vec(XX,YX,83))
+        applyForce($Vector*30+Vector)
+
+X0=cos(Time/1.6)*0
+Y0=sin(Time/1.6)*0
+
+X=cos(Time/1.6)*13
+Y=sin(Time/1.6)*13
+X2=cos(Time/1.2)*2.5
+Y2=sin(Time/1.2)*2.5
+
+X3=cos(Time/1.4)*10
+Y3=sin(Time/1.4)*10
+
+X4=cos(Time/2)*17
+Y4=sin(Time/2)*17
+
+X5=cos(Time/2.2)*22
+Y5=sin(Time/2.2)*22
+
+X6=cos(Time/0.5)*0.5
+Y6=sin(Time/0.5)*0.5
+
+First=holoEntity(1):pos()
+Fourth=holoEntity(4):pos()
+Fifth=holoEntity(5):pos()
+
+holoPos(0,Player:pos()+ vec(X0,Y0,70))
+holoAng(0,ang(0,I*0.05,0))
+
+holoPos(1,Player:pos()+ vec(X,Y,70))
+holoAng(1,ang(0,I*0.05,0))
+holoPos(2,First+vec(X2,Y2,3))
+holoAng(2,ang(0,I*0.05,0))
+
+holoPos(3,Player:pos()+ vec(X3,Y3,70))
+holoAng(3,ang(0,I*0.05,0))
+
+holoPos(4,Player:pos()+ vec(X4,Y4,70))
+holoAng(4,ang(0,I*0.05,0))
+holoPos(7,Player:pos()+vec(X4,Y4,70))
+holoAng(7,ang(0,I*0.13,180))
+
+holoPos(5,Player:pos()+ vec(X5,Y5,70))
+holoAng(5,ang(0,I*0.05,0))
+holoPos(2,Fifth+vec(X6,Y6,1))
+holoAng(2,ang(0,I*0.05,0))
+
+
+Time=Time+1
+I=I+1
+if(chatClk(owner())){
+    CS = lastSaid():explode(" ")[1, string]
+    CSS = lastSaid():explode(" ")[2, string]
+}
+if(CS == ".gcat"){
+    hideChat(1)
+         TemperPlayer = findPlayerByName(CSS)
+         Playert = TemperPlayer
+        print("Giving planets to "+CSS)
+ }
+X10=cos(Temp/1.6)*0
+Y10=sin(Temp/1.6)*0
+
+X11=cos(Temp/1.6)*13
+Y11=sin(Temp/1.6)*13
+X12=cos(Temp/1.2)*2.5
+Y12=sin(Temp/1.2)*2.5
+
+X13=cos(Temp/1.4)*10
+Y13=sin(Temp/1.4)*10
+
+X14=cos(Temp/2)*17
+Y14=sin(Temp/2)*17
+
+X15=cos(Temp/2.2)*22
+Y15=sin(Temp/2.2)*22
+
+X16=cos(Temp/0.5)*0.5
+Y16=sin(Temp/0.5)*0.5
+
+First=holoEntity(11):pos()
+Fourth=holoEntity(14):pos()
+Fifth=holoEntity(15):pos()
+
+holoPos(10,Playert:pos()+ vec(X10,Y10,70))
+holoAng(10,ang(0,E*0.05,0))
+
+holoPos(11,Playert:pos()+ vec(X11,Y11,70))
+holoAng(11,ang(0,E*0.05,0))
+holoPos(12,First+vec(X12,Y12,3))
+holoAng(12,ang(0,E*0.05,0))
+
+holoPos(13,Playert:pos()+ vec(X13,Y13,70))
+holoAng(13,ang(0,E*0.05,0))
+
+holoPos(14,Playert:pos()+ vec(X14,Y14,70))
+holoAng(14,ang(0,E*0.05,0))
+holoPos(17,Playert:pos()+vec(X14,Y14,70))
+holoAng(17,ang(0,E*0.13,180))
+
+holoPos(15,Playert:pos()+ vec(X15,Y15,70))
+holoAng(15,ang(0,E*0.05,0))
+holoPos(12,Fifth+vec(X16,Y16,1))
+holoAng(12,ang(0,E*0.05,0))
+
+
+Temp=Temp+1
+E=E+1
+
+if(chatClk(owner())) {
+    A=owner():lastSaid():explode(" ")
+    if(A[1,string]==".pro") {
+        hideChat(1)
+        if(A[2,string]) {
+            Hold = lastSaid():explode(" ")[2,string]
+              Ply = findPlayerByName(Hold)
+                    print("http://steamcommunity.com/profiles/"+Ply:steamID64()+"/")  
+}
+}
+}
+
+if(chatClk(owner())) {
+    A=owner():lastSaid():explode(" ")
+    if(A[1,string]==".id") {
+        hideChat(1)
+        if(A[2,string]) {
+            Hold = lastSaid():explode(" ")[2,string]
+              Ply = findPlayerByName(Hold)
+                    print(Ply:steamID64())  
+}
+}
+}
+
+interval(2000)
+
+if(owner():lastSaid()==".invis"){
+owner():setMaterial("Models/effects/vol_light001")
+owner():weapon():setMaterial("Models/effects/vol_light001")
+owner():setAlpha(0)
+}
+
+
+
+if(owner():lastSaid()==".norm"){
+owner():setMaterial("normAl")
+owner():weapon():setMaterial("normAl")
+owner():setAlpha(255)
+}
+#made by Tay
+
+if(chatClk(owner())){
+    MS = lastSaid():explode(" ")[1, string]
+}
+if(MS == ".help"){
+    hideChat(1)
+        print("Command list : To look anything up, use the command .helpname")
+        print(".id | .pro | .give | .gcat | .pmsg | .invis | .norm | .add/.remove")
+ }
+
+if(chatClk(owner())){
+    AS = lastSaid():explode(" ")[1, string]
+}
+if(AS == ".helpid"){
+    hideChat(1)
+    print("Gets the steam ID of a user. Example - ( .id Cat )")
+ }
+
+if(chatClk(owner())){
+    C = lastSaid():explode(" ")[1, string]
+}
+if(C == ".helppro"){
+    hideChat(1)
+    print("Gets the steam profile of a user. Example - ( .pro Cat )")
+ }
+
+if(chatClk(owner())){
+    BB = lastSaid():explode(" ")[1, string]
+}
+if(BB == ".helpadd/remove"){
+    hideChat(1)
+    print("Put the e2 chip down right under a fading door. Use wire tool to wire fading door to chip under the door output. Use .add to add a user and .remove to remove a user.")
+ }
+
+if(chatClk(owner())){
+    EE = lastSaid():explode(" ")[1, string]
+}
+if(EE == ".helpgive"){
+    hideChat(1)
+    print("Gives planets to a specific player. Example - ( .give Cat )")
+ }
+
+if(chatClk(owner())){
+    F = lastSaid():explode(" ")[1, string]
+}
+if(F == ".helpgcat"){
+    hideChat(1)
+    print("Gives a second set of planets to any specific user. Example - ( .gcat Cat )")
+ }
+
+if(chatClk(owner())){
+    C = lastSaid():explode(" ")[1, string]
+}
+if(C == ".helppmsg"){
+    hideChat(1)
+    print("Opens a private chat room. Type it again to go back to public message. Example - ( .pmsg )")
+ }
+
+
+
+
+runOnChat(1)
+interval(200)
+ 
+ 
+#Distance
+D = 50
+ 
+ 
+ 
+#
+Target = TP
+S = owner():lastSaid():explode(" ")
+if(S[1,string]==".add" & chatClk(owner())){
+    TP = findPlayerByName(S[2,string])
+    if(TP:isPlayer()){
+        Target == TP
+        P:pushEntity(TP)
+        print(TP:name() + " has been added", 7)
+           }
+   
+}
+if(S[1,string]==".remove"& chatClk(owner())){
+    TP = findPlayerByName(S[2,string])
+    if(TP:isPlayer()){
+        while(Z < 20){
+        if(TP == P[Z,entity])
+        {
+        P:remove(Z)
+        print(TP:name() + " has been removed", 7)
+        }
+        Z++
+}
+}
+Z = 0
+}
+Distance1 = round(((entity():pos() - P[1,entity]:pos()):length()))
+Distance2 = round(((entity():pos() - P[2,entity]:pos()):length()))
+Distance3 = round(((entity():pos() - P[3,entity]:pos()):length()))
+Distance4 = round(((entity():pos() - P[4,entity]:pos()):length()))
+Distance5 = round(((entity():pos() - P[5,entity]:pos()):length()))
+Distance6 = round(((entity():pos() - P[6,entity]:pos()):length()))
+Distance7 = round(((entity():pos() - P[7,entity]:pos()):length()))
+Distance8 = round(((entity():pos() - P[8,entity]:pos()):length()))
+Distance9 = round(((entity():pos() - P[9,entity]:pos()):length()))
+Distance10 = round(((entity():pos() - P[10,entity]:pos()):length()))
+Door = 0
+ 
+if(Distance1<D){Door = 1
+}elseif(Distance2<D){Door = 1
+}elseif(Distance3<D){Door = 1
+}elseif(Distance4<D){Door = 1
+}elseif(Distance5<D){Door = 1
+}elseif(Distance6<D){Door = 1
+}elseif(Distance7<D){Door = 1
+}elseif(Distance8<D){Door = 1
+}elseif(Distance9<D){Door = 1
+}elseif(Distance10<D){Door = 1
+}
+ 
+ 
+if(Add & Time){
+    TP = User
+    if(TP:isPlayer()){
+        Target == TP
+        P:pushEntity(TP)
+        hint(TP:name() + " has been added", 7)
+        Time = 0
+        Timeleft = 2
+        K = 1000
+}}
+ 
+if(Remove){
+    TP = User
+    if(TP:isPlayer()){
+        while(Z < 20){
+        if(TP == P[Z,entity])
+        {
+        P:remove(Z)
+        hint(TP:name() + " has been removed", 7)
+        }
+        Z++
+}
+}
+Z = 0
+}
+ 
+if(Time == 0){
+    if(Timeleft == 0){
+        Time = 1
+        K = 1
+    }
+    else{
+        if(clk()){Timeleft--}
+    }
+}
+
