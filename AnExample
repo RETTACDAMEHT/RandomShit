@@ -1,0 +1,10 @@
+`::
+suspend, toggle
+return
+
+z::
+Send, message
+Send hit{Enter}
+return
+
+esc::ExitApp
